@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./django_app:/django_app
+      - ./django_app/static:/static
+    depends_on:
+      - django_app
+
+  django_app:
+    build:
+      context: ./django_app
+      dockerfile: Dockerfile
+    command: python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py collectstatic --noinput && gunicorn config.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - ./django_app:/django_app
+    env_file:
+      - .env
+    ports:
+      - 8000:8000
+    expose:
+      - "8000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15.3-alpine
+    volumes:
+      - ./postgres_data:/var/lib/postgres/data
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+
+volumes:
+  postgres_data:
+
+

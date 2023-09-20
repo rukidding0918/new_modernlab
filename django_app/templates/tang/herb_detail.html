@@ -1,0 +1,9 @@
+<a href="{% url 'tang:herb_list' %}">목록으로</a>
+
+{{ herb.name }}: g당 {{ herb.price }}원
+{% comment %} if condition request.user is admin {% endcomment %}
+{% if request.user.is_superuser %}
+    <br>
+    너는 관리자니 알려주마<br>
+    {{ herb.buy_unit }}g당 매입가격: {{ herb.buy_price }}원(마진율: {{ herb.margin}}%)
+{% endif %}

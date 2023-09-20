@@ -1,0 +1,32 @@
+<h2>장바구니</h2>
+<ul>
+
+    <li><label><input type="checkbox" name="cash" value="cash">환자명, 처방명, 가격</label></li>
+    <li><label><input type="checkbox" name="cash" value="cash">환자명, 처방명, 가격</label></li>
+    <li><label><input type="checkbox" name="cash" value="cash">환자명, 처방명, 가격</label></li>
+    <li><label><input type="checkbox" name="cash" value="cash">환자명, 처방명, 가격</label></li>
+</ul>
+<form action="order_list.html">
+    <fieldset>
+        <legend>배송정보</legend>
+        <label for="receiver">받는사람</label>
+        <input type="text" name="receiver" id="receiver"><br>
+        <label for="address">주소</label>
+        <input type="text" name="address" id="address"><br>
+        <label for="전화번호">전화번호</label>
+        <input type="tel" name="tel" id="tel">
+    </fieldset>
+    <fieldset>
+        <legend>결제금액</legend>
+        <label for="delivery">배송료</label>
+        <input type="number" name="price" id="price" value="5000" readonly><br>
+        <label for="delivery">총 결제금액</label>
+        <input type="number" name="price" id="price" value="55400" readonly>
+    </fieldset>
+    <fieldset>
+        <legend>결제정보</legend>
+        <label><input type="radio" name="checkout" value="card" checked>카드</label>
+        <label><input type="radio" name="checkout" value="cash">현금</label>
+    </fieldset>
+    <button type="submit">결제하기</button>
+</form>

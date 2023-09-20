@@ -1,0 +1,54 @@
+<h2>처방하기</h2>
+<form action="cart.html">
+    <fieldset>
+        <legend>환자정보</legend>
+        <label for="patient">환자명</label>
+        <input type="text" name="patient" id="patient">
+    </fieldset>
+    <fieldset>
+        <legend>처방정보</legend>
+        <label for="tang">처방명</label>
+        <input type="text" name="patient-name" id="patient-name"><br>
+        <input type="text" name="herb-1" list="herb-list">
+        <input type="number" name="herb-1-q" id="herb-1-q">g<br>
+    
+        <input type="text" name="herb-2" list="herb-list">
+        <input type="number" name="herb-2-q" id="herb-2-q">g<br>
+    
+        <input type="text" name="herb-3" list="herb-list">
+        <input type="number" name="herb-3-q" id="herb-3-q">g<br>
+        <input type="text" name="herb-4" list="herb-list">
+        <input type="number" name="herb-4-q" id="herb-4-q">g<br>
+    
+        <datalist id="herb-list">
+            <option value="인삼"/>
+            <option value="백출"/>
+            <option value="복령"/>
+            <option value="감초"/>
+            <option value="지황"/>
+            <option value="당귀"/>
+            <option value="작약"/>
+            <option value="천궁"/>
+        </datalist>
+        <div>
+            <input type="number" name="chub" id="chub">
+            <label for="chub">첩</label><br>
+            <input type="number" name="pack" id="pack">
+            <label for="pack">팩</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>탕전료</legend>
+        <label for="produce">조제</label>
+        <input type="number" name="produce" id="produce" value="10000" readonly>원<br>
+        <label for="boil">탕전</label>
+        <input type="number" name="boil" id="boil" value="10000" readonly>원<br>
+        <label for="wrap">포장</label>
+        <input type="number" name="wrap" id="wrap" value="10000" readonly>원
+    </fieldset>
+    <fieldset>
+        <legend>탕전금액</legend>
+        <input type="number" name="price" id="price" value="25400" readonly>
+    </fieldset>
+    <button type="submit">처방하기</button>
+</form>

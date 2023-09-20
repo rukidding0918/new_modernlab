@@ -1,0 +1,7 @@
+{% if title %}
+    <h4>{{ title }}</h4>
+{% endif %}
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,14 @@
+# base
+django
+django-environ
+psycopg2-binary
+gunicorn
+
+# dev
+django-debug-toolbar
+django-extensions
+requests
+tqdm
+pytest-django
+factory-boy
+django-browser-reload

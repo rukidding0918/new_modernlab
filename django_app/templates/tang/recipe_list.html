@@ -1,0 +1,8 @@
+
+<h2>처방 목록</h2>
+<a href="{% url 'tang:herb_list' %}">약재 목록 보기</a>
+<ul>
+{% for recipe in recipe_list %}
+    <li><a href="{% url 'tang:recipe_detail' recipe.slug %}">{{ recipe.name }}</a></li>
+{% endfor %}
+</ul>
